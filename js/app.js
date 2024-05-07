@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+	console.log('DOM loaded with JavaScript')
 	const colorGray = '#393939'
 	const colorRed = '#D90000'
 
@@ -33,7 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			type: 'donut',
 
 			height: '340px',
-			width: '100%',
+			// width: '100%',
+
+			redrawOnWindowResize: false,
 		},
 		tooltip: {
 			enabled: false,
@@ -71,6 +74,20 @@ document.addEventListener('DOMContentLoaded', function () {
 	removeElement(slicesLeft, 0)
 	removeElement(labelsRight, labelsRight.length - 1)
 	removeElement(labelsLeft, 0)
+
+	console.log(labelsLeft[0], 'labelsLeft')
+
+	labelsRight.forEach((label) => {
+		const percentage = parseFloat(label.firstElementChild.textContent) * 2
+
+		label.firstElementChild.textContent = percentage.toFixed(1) + '%'
+	})
+
+	labelsLeft.forEach((label) => {
+		const percentage = parseFloat(label.firstElementChild.textContent) * 2
+
+		label.firstElementChild.textContent = percentage.toFixed(1) + '%'
+	})
 
 	const addClass = (elements, className) => elements.forEach((element) => element.classList.add(className))
 	const removeClass = (elements, className) => elements.forEach((element) => element.classList.remove(className))
