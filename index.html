@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<title>География</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="author" content="Igor Snisarenko" />
+		<link rel="icon" href="favicon.ico" />
+
+		<link href="css/app.css" rel="stylesheet" />
+
+		<style></style>
+		<!-- <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+		<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script> -->
+
+		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+		<script defer="defer" src="js/app.js"></script>
+		<script defer="defer" src="js/swiper.js"></script>
+	</head>
+	<body>
+		<div class="layout">
+			<div class="main-menu">
+				<button type="button" class="main-menu__close">
+					<img src="./images/content/cross-icon.svg" alt="" class="svg" />
+				</button>
+				<div class="main-menu__title">Меню</div>
+				<div class="menu-main-desktop">
+					<div class="menu-main-desktop__left">
+						<nav class="main-nav-d">
+							<a href="#" class="main-nav-d__item">О компании</a>
+							<a href="#" class="main-nav-d__item">Рекламные интеграции</a>
+							<a href="#" class="main-nav-d__item">Наши ценности</a>
+							<a href="#" class="main-nav-d__item">Эфирные проекты</a>
+							<a href="#" class="main-nav-d__item">Руководство</a>
+							<a href="#" class="main-nav-d__item">Внеэфирные проекты</a>
+							<a href="#" class="main-nav-d__item">Награды</a>
+							<a href="#" class="main-nav-d__item">Аудио-продакшн</a>
+							<a href="#" class="main-nav-d__item">Карьера</a>
+							<a href="#" class="main-nav-d__item">Кейсы</a>
+							<a href="#" class="main-nav-d__item">География</a>
+							<a href="#" class="main-nav-d__item">Новости</a>
+							<a href="#" class="main-nav-d__item">Реклама</a>
+							<a href="#" class="main-nav-d__item">Контакты</a>
+							<a href="#" class="main-nav-d__item">Реклама на радио</a>
+						</nav>
+						<div class="question-d">
+							<div class="question-d__title">Остались вопросы?</div>
+							<div class="question-d__desc">Оставьте заявку, наши менеджеры вам перезвонят</div>
+							<a href="#" class="btn btn--red">Оставить заявку</a>
+						</div>
+					</div>
+					<div class="menu-main-desktop__right">
+						<div class="menu-main-desktop__contacts">
+							<div class="menu-main-address">
+								<div class="menu-main-desktop__title20">Контактная информация:</div>
+								<div class="menu-main-address__city"><img src="./images/content/location-solid.svg" alt="" class="menu-main-address__location-icon" />Нижний Новгород</div>
+								<div class="menu-main-address__address">ул. Белинского, 32, "Круглая башня", 3 этаж</div>
+								<div class="menu-main-address__phone">+7 (831) 280-82-42</div>
+							</div>
+							<div class="menu-main-desktop-contacts">
+								<div class="menu-main-desktop__title20">Коммерческий отдел:</div>
+								<div class="menu-main-desktop-contacts__tale">
+									<div class="menu-main-desktop-contacts__item">
+										<div class="menu-main-desktop-contacts__phone">+7 (831) 280-82-42</div>
+										<p>Радио Дача, Радио Рекорд, Love Radio, Хит FM, Monte Carlo, Русское Радио, Радио Шансон, Радиола, Радио 7</p>
+									</div>
+									<div class="menu-main-desktop-contacts__item">
+										<div class="menu-main-desktop-contacts__phone">+7 (831) 280-82-42</div>
+										<p>
+											<b>Екатерина Цветкова</b>
+											<br />специалист по работе с рекламными агентствами
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="menu-main-desktop__networks">
+							<div class="social-h">
+								<a href="#" target="_blank" rel="nofollow" class="social-h__item tg">
+									<img src="images/content/tg-solid.svg" alt="" class="svg" />
+								</a>
+								<a href="#" target="_blank" rel="nofollow" class="social-h__item vk">
+									<img src="images/content/vk-solid.svg" alt="" class="svg" />
+								</a>
+								<a href="#" target="_blank" rel="nofollow" class="social-h__item wa">
+									<img src="images/content/watsapp-solid.svg" alt="" class="svg" />
+								</a>
+							</div>
+							<div class="mail-contact">
+								<div class="mail-contact__title">831@gkvr.ru</div>
+								<p>По вопросам и предложениям</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="menu-main-tablet">
+					<nav class="main-nav-tablet">
+						<a href="" class="main-nav-tablet__item">О компании</a>
+						<a href="" class="main-nav-tablet__item">Эфирные проекты</a>
+						<a href="" class="main-nav-tablet__item">Наши ценности</a>
+						<a href="" class="main-nav-tablet__item">Внеэфирные проекты</a>
+						<a href="" class="main-nav-tablet__item">Руководство</a>
+						<a href="" class="main-nav-tablet__item">Аудиопродакшен</a>
+						<a href="" class="main-nav-tablet__item">Награды</a>
+						<a href="" class="main-nav-tablet__item">Радиостанции</a>
+						<a href="" class="main-nav-tablet__item">Карьера</a>
+						<a href="" class="main-nav-tablet__item">Проекты</a>
+						<a href="" class="main-nav-tablet__item">Реклама</a>
+						<a href="" class="main-nav-tablet__item">Новости</a>
+						<a href="" class="main-nav-tablet__item">Реклама на радио</a>
+						<a href="" class="main-nav-tablet__item">Контакты</a>
+						<a href="" class="main-nav-tablet__item">Рекламные интеграции</a>
+					</nav>
+					<div class="menu-main-tablet__footer">
+						<div class="menu-main-tablet__footer-left">
+							<a href="tel:+74950000000" class="menu-main-tablet__phone">+7 (495) 0000000</a>
+							<a href="#callback-modal" class="btn btn--green open-modal">Заказать звонок</a>
+						</div>
+						<div class="menu-main-tablet__footer-right">
+							<div class="location-dropdown">
+								<a href="">
+									<img src="./images/content/location.svg" alt="" class="location-dropdown__location-icon svg" />
+								</a>
+								<select class="js-city-select" name="state">
+									<option value="">Нижний Новгород</option>
+									<option value="">Новосибирск Новосибирск Новосибирск Новосибирск</option>
+									<option value="">Орел</option>
+									<option value="">Оренбург</option>
+									<option value="">Оскол</option>
+									<option value="">Ростов на Дону</option>
+									<option value="">Тверь</option>
+									<option value="">Нижний Новгород</option>
+									<option value="">Новосибирск</option>
+									<option value="">Орел</option>
+									<option value="">Оренбург</option>
+									<option value="">Оскол</option>
+									<option value="">Ростов на Дону</option>
+									<option value="">Тверь</option>
+								</select>
+							</div>
+							<div class="socials">
+								<a href="#" target="_blank" rel="nofollow" class="socials__item vk">
+									<img src="images/content/vk-icon.svg" alt="" class="svg" />
+								</a>
+								<a href="#" target="_blank" rel="nofollow" class="socials__item tg">
+									<img src="images/content/tg-icon.svg" alt="" class="svg" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<header class="header">
+				<div class="wrapper">
+					<div class="header__wrapper">
+						<div class="header__left">
+							<a href="#" class="logo">
+								<img src="./images/content/logo.svg" alt="" class="logo__image" />
+							</a>
+							<button class="show-menu close_menu">
+								<img src="./images/content/menu.svg" alt="" class="show-menu__icon svg" />
+							</button>
+							<div class="location-dropdown header-m__location-dropdown">
+								<a href="">
+									<img src="./images/content/location.svg" alt="" class="location-dropdown__location-icon svg" />
+								</a>
+								<select class="js-city-select" name="state">
+									<option value="">Нижний Новгород</option>
+									<option value="">Новосибирск Новосибирск Новосибирск Новосибирск</option>
+									<option value="">Орел</option>
+									<option value="">Оренбург</option>
+									<option value="">Оскол</option>
+									<option value="">Ростов на Дону</option>
+									<option value="">Тверь</option>
+									<option value="">Нижний Новгород</option>
+									<option value="">Новосибирск</option>
+									<option value="">Орел</option>
+									<option value="">Оренбург</option>
+									<option value="">Оскол</option>
+									<option value="">Ростов на Дону</option>
+									<option value="">Тверь</option>
+								</select>
+							</div>
+						</div>
+						<div class="header__right">
+							<a href="tel:+74950000000" class="phone">+7 (495) 0000000</a>
+							<a href="#callback-modal" class="btn btn--green header-m__btn-callback open-modal">Заказать звонок</a>
+							<div class="socials header__socials">
+								<a href="#" target="_blank" rel="nofollow" class="socials__item vk">
+									<img src="images/content/vk-icon.svg" alt="" class="svg" />
+								</a>
+								<a href="#" target="_blank" rel="nofollow" class="socials__item tg">
+									<img src="images/content/tg-icon.svg" alt="" class="svg" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main>
+				<div class="wrapper">
+					<section class="section-charts">
+						<h2 class="header-2">Радиостанции Екатеринбурга</h2>
+						<div class="carousel-radio-images">
+							<!-- Slider main container -->
+							<div class="swiper">
+								<!-- Additional required wrapper -->
+								<div class="swiper-wrapper">
+									<!-- Slides -->
+									<div class="swiper-slide">
+										<a href="#">
+											<img src="./images/image-png.png" alt="" class="carousel-radio__img" />
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<img src="./images/image-png.png" alt="" class="carousel-radio__img" />
+										</a>
+									</div>
+
+									<div class="swiper-slide">
+										<a href="#">
+											<img src="./images/image-png.png" alt="" class="carousel-radio__img" />
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<img src="./images/icn-radio-4.svg" alt="" class="carousel-radio__img" />
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<img src="./images/icn-radio-5.svg" alt="" class="carousel-radio__img" />
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<img src="./images/icn-radio-6.svg" alt="" class="carousel-radio__img" />
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<img src="./images/icn-radio-7.svg" alt="" class="carousel-radio__img" />
+										</a>
+									</div>
+									<div class="swiper-slide">
+										<a href="#">
+											<img src="./images/icn-radio-8.svg" alt="" class="carousel-radio__img" />
+										</a>
+									</div>
+								</div>
+
+								<!-- If we need navigation buttons -->
+								<div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div>
+							</div>
+						</div>
+						<div class="radio-grid">
+							<div class="radio-grid-description">
+								<h2 class="header-2">Радио Шансон 103.2 FM</h2>
+
+								<p>Радио Шансон – это уникальный музыкальный эфир, вобравший в себя более 700 самобытных артистов, чьи произведения в большинстве случаев не встретишь в эфире других радиостанций и уникальные русские песенные жанры: начиная с авторской (бардовской) песни и заканчивая песнями русской эмиграции разных лет.</p>
+
+								<p>Это харизматичные и любимые ведущие, программы, построенные по принципу «полезно-интересно-информативно», и собственная музыкальная премия «Шансон года», проходящая в Кремле.</p>
+
+								<div class="button-wrapper">
+									<a class="btn btn--red btn--size-large footer-contacts__btn open-modal" href="#callback-modal">
+										Слушать радио
+										<svg width="23" height="22" style="margin-left: 8px" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<circle cx="11.1016" cy="11" r="11" fill="white" />
+											<g clip-path="url(#clip0_781_3065)">
+												<path d="M14.9039 10.3728C15.3998 10.644 15.3998 11.3561 14.9039 11.6273L9.27139 14.7081C8.79491 14.9687 8.21328 14.6239 8.21328 14.0808L8.21328 7.91927C8.21328 7.37617 8.79491 7.03135 9.27139 7.29197L14.9039 10.3728Z" fill="#E62F20" />
+											</g>
+											<defs>
+												<clipPath id="clip0_781_3065">
+													<rect width="11" height="11" fill="white" transform="translate(5.60156 5.5)" />
+												</clipPath>
+											</defs>
+										</svg>
+									</a>
+
+									<a class="btn btn--green btn--size-large footer-contacts__btn open-modal" href="#callback-modal">Скачать прайс-лист</a>
+								</div>
+							</div>
+
+							<div class="radio-grid-chart">
+								<span class="chart-title">Аудитория</span>
+								<div id="chart-wrapper">
+									<div class="chart-wrapper__left">
+										<div class="percent">
+											<img src="./images/icn-man.svg" class="icon" />
+											<span>56%</span>
+										</div>
+									</div>
+									<div class="chart-wrapper__right">
+										<div class="percent">
+											<img src="./images/icn-woman.svg" class="icon" />
+											<span>44%</span>
+										</div>
+									</div>
+									<div id="chart-right"></div>
+									<div id="chart-left"></div>
+								</div>
+							</div>
+
+							<div class="radio-grid-chart-rating">
+								<span class="chart-title">Рейтинги</span>
+
+								<div class="radio-grid-chart-rating-wrapper">
+									<div class="radio-grid-chart-rating-column">
+										<span class="title">Маяк</span>
+										<span class="title">Радиостанция 1</span>
+										<span class="title active">Радиостанция Тест</span>
+										<span class="title">Радиостанция 1</span>
+										<span class="title">Радиостанция 1</span>
+										<span class="title">Радиостанция 1</span>
+										<span class="title">Радиостанция 1</span>
+										<span class="title">Радиостанция 1</span>
+									</div>
+									<div class="radio-grid-chart-rating-column">
+										<div class="value" data-value="40"></div>
+										<div class="value" data-value="100"></div>
+										<div class="value active" data-value="40"></div>
+										<div class="value" data-value="40"></div>
+										<div class="value" data-value="40"></div>
+										<div class="value" data-value="40"></div>
+										<div class="value" data-value="20"></div>
+										<div class="value" data-value="40"></div>
+									</div>
+									<div class="radio-grid-chart-rating-column">
+										<div class="number">123.95</div>
+										<div class="number">111.56</div>
+										<div class="number active">90</div>
+										<div class="number">80</div>
+										<div class="number">70</div>
+										<div class="number">15</div>
+										<div class="number">1</div>
+										<div class="number">1</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="radio-grid-chart-legend man">
+								<div class="wrapper-items">
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--1"></div>
+										<div class="chart-legend__text">12-19</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--2"></div>
+										<div class="chart-legend__text">20-29</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--3"></div>
+										<div class="chart-legend__text">30-39</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--4"></div>
+										<div class="chart-legend__text">40-49</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--5"></div>
+										<div class="chart-legend__text">50-59</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--6"></div>
+										<div class="chart-legend__text">60+</div>
+									</div>
+								</div>
+
+								<p class="text">*Источник: Mediascope, Radio Index Казань, Июль 2021-Июнь 2022, среди населения в возрасте 12 лет и старше. Daily Reach - накопленное суточное количество слушателей радиостанции.</p>
+							</div>
+							<div class="radio-grid-chart-legend woman">
+								<div class="wrapper-items">
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--1"></div>
+										<div class="chart-legend__text">12-19</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--2"></div>
+										<div class="chart-legend__text">20-29</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--3"></div>
+										<div class="chart-legend__text">30-39</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--4"></div>
+										<div class="chart-legend__text">40-49</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--5"></div>
+										<div class="chart-legend__text">50-59</div>
+									</div>
+									<div class="chart-legend__item">
+										<div class="chart-legend__color chart-legend__color--6"></div>
+										<div class="chart-legend__text">60+</div>
+									</div>
+								</div>
+
+								<p class="text">*Источник: Mediascope, Radio Index Казань, Июль 2021-Июнь 2022, среди населения в возрасте 12 лет и старше. Daily Reach - накопленное суточное количество слушателей радиостанции.</p>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+			<div id="overlay"></div>
+			<footer class="footer">
+				<div class="wrapper">
+					<div class="footer__top">
+						<a href="#" class="ft-logo">
+							<img src="./images/content/logo-ft.svg" alt="" />
+						</a>
+					</div>
+					<div class="footer__center">
+						<div class="footer__col">
+							<div class="footer-title">Слышим потребности - подключаем решения!</div>
+						</div>
+						<div class="footer__col footer__col--nav-desktop">
+							<div class="footer__nav-wrapper">
+								<div class="footer-nav-wrapper">
+									<div class="footer-nav-wrapper__title">Компания</div>
+									<nav class="footer-nav">
+										<a href="" class="footer-nav__item">О компании</a>
+										<a href="" class="footer-nav__item">Наши ценности</a>
+										<a href="" class="footer-nav__item">Руководство</a>
+										<a href="" class="footer-nav__item">Награды</a>
+										<a href="" class="footer-nav__item">Карьера</a>
+									</nav>
+								</div>
+								<div class="footer-nav-wrapper">
+									<div class="footer-nav-wrapper__title">Реклама</div>
+									<nav class="footer-nav">
+										<a href="" class="footer-nav__item">Реклама</a>
+										<a href="" class="footer-nav__item">Реклама на радио</a>
+										<a href="" class="footer-nav__item">Рекламные интеграции</a>
+										<a href="" class="footer-nav__item">Эфирные проекты</a>
+										<a href="" class="footer-nav__item">Внеэфирные проекты</a>
+										<a href="" class="footer-nav__item">Аудиопродакшен</a>
+									</nav>
+								</div>
+								<div class="footer-nav-wrapper">
+									<div class="footer-nav-wrapper__divider"></div>
+									<nav class="footer-nav">
+										<a href="" class="footer-nav__item">Радиостанции</a>
+										<a href="" class="footer-nav__item">Проекты</a>
+										<a href="" class="footer-nav__item">Новости</a>
+										<a href="" class="footer-nav__item">Контакты</a>
+									</nav>
+								</div>
+							</div>
+						</div>
+						<address class="address-ft address-ft--mobile">Адрес: 117066, г. Москва, ул. Ольховская, д. 4, корп. 2, офис 555</address>
+						<div class="footer__col">
+							<div class="footer-contacts">
+								<a class="btn btn--green btn--size-large footer-contacts__btn open-modal" href="#callback-modal">Заказать звонок </a>
+								<a href="tel:+74950000000" class="footer-phone"> <img src="images/content/phone-icon.svg" alt="" class="footer-phone__icon svg" />+7 (495) 0000000 </a>
+							</div>
+						</div>
+						<div class="footer__col footer__col--nav-mobile">
+							<nav class="footer-nav">
+								<a href="" class="footer-nav__item">О компании</a>
+								<a href="" class="footer-nav__item">Эфирные проекты</a>
+								<a href="" class="footer-nav__item">Наши ценности</a>
+								<a href="" class="footer-nav__item">Внеэфирные проекты</a>
+								<a href="" class="footer-nav__item">Руководство</a>
+								<a href="" class="footer-nav__item">Аудиопродакшен</a>
+								<a href="" class="footer-nav__item">Награды</a>
+								<a href="" class="footer-nav__item">Радиостанции</a>
+								<a href="" class="footer-nav__item">Карьера</a>
+								<a href="" class="footer-nav__item">Проекты</a>
+								<a href="" class="footer-nav__item">Реклама</a>
+								<a href="" class="footer-nav__item">Новости</a>
+								<a href="" class="footer-nav__item">Реклама на радио</a>
+								<a href="" class="footer-nav__item">Контакты</a>
+								<a href="" class="footer-nav__item">Рекламные интеграции</a>
+							</nav>
+						</div>
+					</div>
+					<div class="footer__bottom">
+						<div class="footer__col">
+							<address class="address-ft">Адрес: 117066, г. Москва, ул. Ольховская, д. 4, корп. 2, офис 555</address>
+							<span class="copy">ООО "Выбери Радио", 2023. © Все права защищены.</span>
+						</div>
+						<div class="footer__col">
+							<div class="privacy-socials-wrapper">
+								<div class="privacy">
+									<a href="#" target="_blank" class="privacy__item">Пользовательское соглашение</a>
+									<a href="#" target="_blank" class="privacy__item">Политика обработки персональных данных</a>
+									<a href="#" target="_blank" class="privacy__item">Политика конфиденциальности</a>
+								</div>
+								<div class="socials">
+									<a href="#" target="_blank" rel="nofollow" class="socials__item vk">
+										<img src="images/content/vk-icon.svg" alt="" class="svg" />
+									</a>
+									<a href="#" target="_blank" rel="nofollow" class="socials__item tg">
+										<img src="images/content/tg-icon.svg" alt="" class="svg" />
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<div id="callback-modal" class="modal modal-callback">
+			<a href="" rel="modal:close" class="modal-callback__close">
+				<img src="./images/content/cross-icon.svg" alt="" class="svg" />
+			</a>
+			<form id="modalCallback" class="modal-callback__content" novalidate="novalidate" action>
+				<div class="modal-callback__title">Закажите звонок</div>
+				<div class="modal-callback__descr">Мы свяжемся с вами в ближайшее время и дадим подробную консультацию</div>
+				<div class="modal-callback__fields">
+					<div class="modal-callback__field">
+						<label for="name" class="label-input">Ваше имя</label>
+						<input name="name" id="name" value="" class="text-input" />
+					</div>
+					<div class="modal-callback__field">
+						<label for="phone" class="label-input">Ваш телефон</label>
+						<input type="tel" name="phone" id="phone" value="" class="text-input phone_mask" inputmode="text" />
+					</div>
+				</div>
+				<div class="modal-callback__check">
+					<div class="check">
+						<input name="agree" id="agree" type="checkbox" value="" />
+						<label for="agree" class="label-check">Нажимая на кнопку «Заказать звонок», вы даете согласие на обработку персональных данных</label>
+					</div>
+				</div>
+				<button type="submit" class="btn btn--green">Заказать звонок</button>
+				<div class="modal-callback__form-message">Форма успешно отправлена</div>
+			</form>
+		</div>
+	</body>
+</html>
