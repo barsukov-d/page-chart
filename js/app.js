@@ -3,8 +3,33 @@ document.addEventListener('DOMContentLoaded', function () {
 	const colorGray = '#393939'
 	const colorRed = '#D90000'
 
-	const dataChartR = [2, 8, 10, 10, 10, 10, 50]
-	const dataChartL = [50, 20, 10, 10, 8, 2]
+	// function dataAuditory(dataMan, dataWoman) {
+	// 	const dataChartL = dataMan.map((value) => value / 2) // делим все элементы на 2
+
+	// 	const sumL = dataChartL.reduce((a, b) => a + b, 0) // суммируем все элементы
+	// 	const newElementL = 100 - sumL // вычисляем новый элемент
+
+	// 	dataChartL.unshift(newElementL) // добавляем новый элемент в начало массива
+
+	// 	const dataChartR = dataWoman.map((value) => value / 2) // делим все элементы на 2
+
+	// 	const sumR = dataChartR.reduce((a, b) => a + b, 0) // суммируем все элементы
+	// 	const newElementR = 100 - sumR // вычисляем новый элемент
+
+	// 	dataChartR.push(newElementR) // добавляем новый элемент в конец массива
+
+	// 	return [dataChartL, dataChartR]
+	// }
+
+	// const dataMan = [20, 20, 20, 20, 10, 10]
+	// const dataWoman = [10, 10, 20, 20, 20, 20]
+
+	// const percentMan = 60
+	// const percentWoman = 40
+
+	// const [dataChartL, dataChartR] = dataAuditory(dataMan, dataWoman)
+	const dataChartL = [10, 10, 20, 20, 20, 20, 10, 10, 20, 20, 20, 20]
+	// const dataChartR = [2, 8, 10, 10, 10, 20, 40]
 
 	function generateColors(count, baseColor) {
 		const match = baseColor.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i)
@@ -25,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		return colors
 	}
 
-	const colorsMan = ['#393939', '#5a5a5a', '#7f7f7f', '#a4a4a4', '#a4a4a4', '#e3e3e3']
-	const colorsWoman = ['#fff0f0', '#ffb4b4', '#ff8484', '#ff4f4f', '#ff0000', '#d90000']
+	const colorsMan = ['#d90000', '#ff0000', '#ff4f4f', '#ff8484', '#ffb4b4', '#fff0f0', '#393939', '#5a5a5a', '#7f7f7f', '#a4a4a4', '#a4a4a4', '#e3e3e3']
+	const colorsWoman = []
 
 	const chartOptions = (selector, dataChart, color) => ({
 		series: dataChart,
@@ -48,32 +73,39 @@ document.addEventListener('DOMContentLoaded', function () {
 		plotOptions: {
 			pie: {
 				donut: {
-					size: '45%',
+					size: '55%',
 				},
 			},
 		},
 	})
 
-	const chartRight = new ApexCharts(document.querySelector('#chart-right'), chartOptions('#chart-right', dataChartR, colorsWoman))
-	chartRight.render()
+	// const chartRight = new ApexCharts(document.querySelector('#chart-right'), chartOptions('#chart-right', dataChartR, colorsWoman))
+	// chartRight.render()
 
 	const chartLeft = new ApexCharts(document.querySelector('#chart-left'), chartOptions('#chart-left', dataChartL, colorsMan))
 	chartLeft.render()
 
 	const leftWrapper = document.querySelector('.chart-wrapper__left')
 	const rightWrapper = document.querySelector('.chart-wrapper__right')
-	const slicesRight = document.querySelectorAll('#chart-right .apexcharts-series')
-	const slicesLeft = document.querySelectorAll('#chart-left .apexcharts-series')
-	const labelsRight = document.querySelectorAll('#chart-right .apexcharts-datalabels')
-	const labelsLeft = document.querySelectorAll('#chart-left .apexcharts-datalabels')
+	// const slicesRight = document.querySelectorAll('#chart-right .apexcharts-series')
+	const slices = document.querySelectorAll('#chart-left .apexcharts-series')
+	const slicesArray = Array.from(slices)
+	const slicesRight = slicesArray.slice(0, 6)
+	const slicesLeft = slicesArray.slice(6, 12)
+
+	const labels = document.querySelectorAll('#chart-left .apexcharts-datalabels')
+	const labelsArray = Array.from(labels)
+
+	const labelsRight = labelsArray.slice(0, 6)
+	const labelsLeft = labelsArray.slice(6, 12)
 	const manLegend = document.querySelector('.radio-grid-chart-legend.man')
 	const womanLegend = document.querySelector('.radio-grid-chart-legend.woman')
 
-	const removeElement = (elements, index) => elements[index].remove()
-	removeElement(slicesRight, slicesRight.length - 1)
-	removeElement(slicesLeft, 0)
-	removeElement(labelsRight, labelsRight.length - 1)
-	removeElement(labelsLeft, 0)
+	// const removeElement = (elements, index) => elements[index].remove()
+	// removeElement(slicesRight, slicesRight.length - 1)
+	// removeElement(slicesLeft, 0)
+	// removeElement(labelsRight, labelsRight.length - 1)
+	// removeElement(labelsLeft, 0)
 
 	console.log(labelsLeft[0], 'labelsLeft')
 
@@ -88,6 +120,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		label.firstElementChild.textContent = percentage.toFixed(1) + '%'
 	})
+
+	// labelsRight.forEach((label, index) => {
+	// 	const percentage = dataWoman[index]
+
+	// 	if (percentage !== undefined) {
+	// 		label.firstElementChild.textContent = percentage.toFixed(1) + '%'
+	// 	}
+	// })
+
+	// Array.from(labelsLeft)
+	// 	.slice(1)
+	// 	.forEach((label, index) => {
+	// 		const percentage = dataMan[index] // добавляем 1 к индексу, так как мы пропустили первый элемент
+
+	// 		if (percentage !== undefined) {
+	// 			label.firstElementChild.textContent = percentage.toFixed(1) + '%'
+	// 		}
+
+	// 		console.log(label.firstElementChild.textContent, 'label.firstElementChild.textContent')
+	// 	})
 
 	const addClass = (elements, className) => elements.forEach((element) => element.classList.add(className))
 	const removeClass = (elements, className) => elements.forEach((element) => element.classList.remove(className))

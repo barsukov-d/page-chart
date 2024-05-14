@@ -10453,12 +10453,12 @@ b {
 		}
 
 		& .radio-grid-chart-rating-wrapper {
-			display: grid;
-			grid-template-columns: 2fr 2fr 1fr;
+			display: flex;
+			flex-direction: column;
 
-			& .radio-grid-chart-rating-column {
+			& .radio-grid-chart-rating-row {
 				display: flex;
-				flex-direction: column;
+				max-width: 400px;
 
 				& .title {
 					margin-top: 15px;
@@ -10469,22 +10469,26 @@ b {
 					text-align: left;
 
 					color: #1c1c1cb2;
+					width: 150px;
 
 					&.active {
 						color: #e62f20;
 					}
 				}
 
-				& .value {
-					margin-top: 18px;
-					height: 14px;
+				& .wrapper-value {
 					width: 150px;
+					& .value {
+						margin-top: 18px;
+						height: 14px;
+						width: 150px;
 
-					display: block;
-					background: #dedede;
+						display: block;
+						background: #dedede;
 
-					&.active {
-						background: #e62f20;
+						&.active {
+							background: #e62f20;
+						}
 					}
 				}
 

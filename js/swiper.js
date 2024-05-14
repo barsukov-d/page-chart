@@ -38,4 +38,6 @@ swiperRadio.on('click', function (swiper) {
 document.querySelectorAll('.value').forEach((element) => {
 	const value = element.getAttribute('data-value')
 	element.style.width = `${value}%`
+
+	console.log(element, 'element')
 })
