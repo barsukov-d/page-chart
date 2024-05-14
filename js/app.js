@@ -1,57 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-	console.log('DOM loaded with JavaScript')
-	const colorGray = '#393939'
-	const colorRed = '#D90000'
+	const dataChartL = [45, 5, 20, 20, 5, 5, 5, 5, 20, 20, 30, 20]
 
-	// function dataAuditory(dataMan, dataWoman) {
-	// 	const dataChartL = dataMan.map((value) => value / 2) // делим все элементы на 2
-
-	// 	const sumL = dataChartL.reduce((a, b) => a + b, 0) // суммируем все элементы
-	// 	const newElementL = 100 - sumL // вычисляем новый элемент
-
-	// 	dataChartL.unshift(newElementL) // добавляем новый элемент в начало массива
-
-	// 	const dataChartR = dataWoman.map((value) => value / 2) // делим все элементы на 2
-
-	// 	const sumR = dataChartR.reduce((a, b) => a + b, 0) // суммируем все элементы
-	// 	const newElementR = 100 - sumR // вычисляем новый элемент
-
-	// 	dataChartR.push(newElementR) // добавляем новый элемент в конец массива
-
-	// 	return [dataChartL, dataChartR]
-	// }
-
-	// const dataMan = [20, 20, 20, 20, 10, 10]
-	// const dataWoman = [10, 10, 20, 20, 20, 20]
-
-	// const percentMan = 60
-	// const percentWoman = 40
-
-	// const [dataChartL, dataChartR] = dataAuditory(dataMan, dataWoman)
-	const dataChartL = [10, 10, 20, 20, 20, 20, 10, 10, 20, 20, 20, 20]
-	// const dataChartR = [2, 8, 10, 10, 10, 20, 40]
-
-	function generateColors(count, baseColor) {
-		const match = baseColor.match(/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i)
-		let r = parseInt(match[1], 16)
-		let g = parseInt(match[2], 16)
-		let b = parseInt(match[3], 16)
-
-		let colors = []
-		for (let i = 0; i < count; i++) {
-			let newR = Math.min(r + i * 10, 255)
-			let newG = Math.min(g + i * 10, 255)
-			let newB = Math.min(b + i * 10, 255)
-
-			let color = '#' + ((1 << 24) + (newR << 16) + (newG << 8) + newB).toString(16).slice(1)
-			colors.push(color)
-		}
-
-		return colors
-	}
-
-	const colorsMan = ['#d90000', '#ff0000', '#ff4f4f', '#ff8484', '#ffb4b4', '#fff0f0', '#393939', '#5a5a5a', '#7f7f7f', '#a4a4a4', '#a4a4a4', '#e3e3e3']
-	const colorsWoman = []
+	const colorsMan = ['#d90000', '#ff0000', '#ff4f4f', '#ff8484', '#ffb4b4', '#fff0f0', '#e3e3e3', '#a4a4a4', '#a4a4a4', '#7f7f7f', '#5a5a5a', '#393939']
 
 	const chartOptions = (selector, dataChart, color) => ({
 		series: dataChart,
@@ -79,38 +29,37 @@ document.addEventListener('DOMContentLoaded', function () {
 		},
 	})
 
-	// const chartRight = new ApexCharts(document.querySelector('#chart-right'), chartOptions('#chart-right', dataChartR, colorsWoman))
-	// chartRight.render()
-
 	const chartLeft = new ApexCharts(document.querySelector('#chart-left'), chartOptions('#chart-left', dataChartL, colorsMan))
 	chartLeft.render()
 
 	const leftWrapper = document.querySelector('.chart-wrapper__left')
 	const rightWrapper = document.querySelector('.chart-wrapper__right')
-	// const slicesRight = document.querySelectorAll('#chart-right .apexcharts-series')
 	const slices = document.querySelectorAll('#chart-left .apexcharts-series')
 	const slicesArray = Array.from(slices)
+
 	const slicesRight = slicesArray.slice(0, 6)
 	const slicesLeft = slicesArray.slice(6, 12)
 
 	const labels = document.querySelectorAll('#chart-left .apexcharts-datalabels')
 	const labelsArray = Array.from(labels)
 
-	const labelsRight = labelsArray.slice(0, 6)
-	const labelsLeft = labelsArray.slice(6, 12)
+	// console.log(
+	// 	dataChartL.slice(0, 6).filter((item, index) => index < 6 && item > 5),
+	// 	'slicesRight.slice(0, 6).filter((item, index) => index < 6 && item > 5)'
+	// )
+
+	const labelsRightLength = dataChartL.slice(0, 6).filter((item, index) => index < 6 && item > 5).length
+	const labelsLeftLength = dataChartL.slice(6, 12).filter((item, index) => index < 6 && item > 5).length
+	console.log(labelsRightLength, 'labelsRightLength')
+
+	const labelsRight = labelsArray.slice(0, labelsRightLength)
+	const labelsLeft = labelsArray.slice(labelsRightLength, labelsRightLength + labelsLeftLength)
 	const manLegend = document.querySelector('.radio-grid-chart-legend.man')
 	const womanLegend = document.querySelector('.radio-grid-chart-legend.woman')
 
-	// const removeElement = (elements, index) => elements[index].remove()
-	// removeElement(slicesRight, slicesRight.length - 1)
-	// removeElement(slicesLeft, 0)
-	// removeElement(labelsRight, labelsRight.length - 1)
-	// removeElement(labelsLeft, 0)
-
-	console.log(labelsLeft[0], 'labelsLeft')
-
 	labelsRight.forEach((label) => {
 		const percentage = parseFloat(label.firstElementChild.textContent) * 2
+		console.log(label.firstElementChild.textContent, 'label.firstElementChild.textContent')
 
 		label.firstElementChild.textContent = percentage.toFixed(1) + '%'
 	})
