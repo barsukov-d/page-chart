@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-	const dataChartL = [45, 5, 20, 20, 5, 5, 5, 5, 20, 20, 30, 20]
+	const dataChartL = [50, 0, 20, 25, 5, 5, 5, 5, 20, 20, 30, 15]
 
 	const colorsMan = ['#d90000', '#ff0000', '#ff4f4f', '#ff8484', '#ffb4b4', '#fff0f0', '#e3e3e3', '#a4a4a4', '#a4a4a4', '#7f7f7f', '#5a5a5a', '#393939']
 
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		plotOptions: {
 			pie: {
 				donut: {
-					size: '55%',
+					size: '45%',
 				},
 			},
 		},
@@ -42,11 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const labels = document.querySelectorAll('#chart-left .apexcharts-datalabels')
 	const labelsArray = Array.from(labels)
-
-	// console.log(
-	// 	dataChartL.slice(0, 6).filter((item, index) => index < 6 && item > 5),
-	// 	'slicesRight.slice(0, 6).filter((item, index) => index < 6 && item > 5)'
-	// )
 
 	const labelsRightLength = dataChartL.slice(0, 6).filter((item, index) => index < 6 && item > 5).length
 	const labelsLeftLength = dataChartL.slice(6, 12).filter((item, index) => index < 6 && item > 5).length
@@ -69,26 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		label.firstElementChild.textContent = percentage.toFixed(1) + '%'
 	})
-
-	// labelsRight.forEach((label, index) => {
-	// 	const percentage = dataWoman[index]
-
-	// 	if (percentage !== undefined) {
-	// 		label.firstElementChild.textContent = percentage.toFixed(1) + '%'
-	// 	}
-	// })
-
-	// Array.from(labelsLeft)
-	// 	.slice(1)
-	// 	.forEach((label, index) => {
-	// 		const percentage = dataMan[index] // добавляем 1 к индексу, так как мы пропустили первый элемент
-
-	// 		if (percentage !== undefined) {
-	// 			label.firstElementChild.textContent = percentage.toFixed(1) + '%'
-	// 		}
-
-	// 		console.log(label.firstElementChild.textContent, 'label.firstElementChild.textContent')
-	// 	})
 
 	const addClass = (elements, className) => elements.forEach((element) => element.classList.add(className))
 	const removeClass = (elements, className) => elements.forEach((element) => element.classList.remove(className))
