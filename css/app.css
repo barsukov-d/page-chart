@@ -10512,6 +10512,7 @@ b {
 	justify-content: center;
 }
 .section-charts .carousel-radio-images .swiper-wrapper .swiper-slide img {
+	height: 78px;
 	transition: filter 0.3s ease-in-out;
 	filter: grayscale(87%) sepia(31%) hue-rotate(110deg) saturate(0%);
 	-webkit-filter: grayscale(87%) sepia(31%) hue-rotate(110deg) saturate(0%);
